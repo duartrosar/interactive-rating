@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 let [color, scale, textColor] = "";
 
-const Circle = ({ onClick, number = 0, url = "", hover, selected }) => {
+const Circle = ({ onClick, number = 0, url = "", hover, selected, rating }) => {
   const styles = {
     default: {
       color: "bg-dark-blue",
@@ -44,9 +44,9 @@ const Circle = ({ onClick, number = 0, url = "", hover, selected }) => {
     circleStyles.scale,
   );
 
-  if (number == 0) {
-    console.log(circleStyles);
-  }
+  // if (number == 0) {
+  //   console.log(circleStyles);
+  // }
 
   return (
     <div onClick={onClick} className={circleClasses}>
