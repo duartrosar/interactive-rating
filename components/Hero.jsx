@@ -1,12 +1,11 @@
 import Link from "next/link";
 import React from "react";
 import Circle from "./Circle";
+import Button from "./Button";
 
 const Hero = () => {
   const [hoverIndex, setHoverIndex] = React.useState(0);
   const [rating, setRating] = React.useState(0);
-
-  React.useEffect(() => {}, []);
 
   return (
     <div className="w-100 h-[100vh] flex justify-center items-center">
@@ -35,6 +34,7 @@ const Hero = () => {
                   number={index}
                   hover={index <= hoverIndex}
                   selected={index <= rating}
+                  rating={rating}
                 />
               </div>
             );
@@ -46,14 +46,7 @@ const Hero = () => {
           <Circle number={5} /> */}
         </div>
         <div className="mt-8">
-          <Link href="/">
-            <p
-              className="font-main text-center p-2 rounded-full bg-[#fb7413]
-                 text-white uppercase font-normal text-lg cursor-pointer hover:bg-white hover:text-[#fb7413]"
-            >
-              Submit
-            </p>
-          </Link>
+          <Button isActive={rating > 0} />
         </div>
       </div>
     </div>
