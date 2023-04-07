@@ -21,7 +21,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500);
+    }, 1000);
 
     return () => {
       clearTimeout(timer);
@@ -29,7 +29,7 @@ const Hero = () => {
   }, [isLoading]);
 
   return (
-    <div className="w-100 h-[100vh] flex justify-center items-center px-6">
+    <div className="w-100 h-[100vh] flex flex-col justify-center items-center px-6">
       {isLoading ? (
         <div className="animate-spin h-10 w-10 border-t-2 border-primary rounded-full mr-3 text-primary"></div>
       ) : (
@@ -43,6 +43,30 @@ const Hero = () => {
               submitted={submitted}
             />
           )}
+        </div>
+      )}
+      {!isLoading && (
+        <div className="py-6">
+          <p className="font-main text-light-gray text-xs font-semibold text-center">
+            Challenge by{" "}
+            <Link
+              target="_blank"
+              className="text-primary"
+              href="https://www.frontendmentor.io/"
+            >
+              Frontend Mentor
+            </Link>
+            . <br className="sm:hidden" />
+            Coded by{" "}
+            <Link
+              target="_blank"
+              className="text-primary"
+              href="https://github.com/duartrosar"
+            >
+              Duarte Ribeiro
+            </Link>
+            .
+          </p>
         </div>
       )}
     </div>
