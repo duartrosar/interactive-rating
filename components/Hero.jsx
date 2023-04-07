@@ -21,7 +21,7 @@ const Hero = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1500);
 
     return () => {
       clearTimeout(timer);
@@ -30,7 +30,30 @@ const Hero = () => {
 
   return (
     <div className="w-100 h-[100vh] flex justify-center items-center px-6">
-      <div className="bg-[#252d37] max-w-[416px] rounded-2xl shadow-lg shadow-[#0d1014] py-8 px-6 sm:p-8 bg-gradient-to-b from-[#252d37] to-[#181e25] flex items-center justify-center min-h-[416px] min-w-[416px]">
+      {isLoading ? (
+        <div className="animate-spin h-10 w-10 border-t-2 border-primary rounded-full mr-3 text-primary"></div>
+      ) : (
+        <div className="bg-[#252d37] max-w-[416px] rounded-2xl shadow-lg shadow-[#0d1014] py-8 px-6 sm:p-8 bg-gradient-to-b from-[#252d37] to-[#181e25]">
+          {submitted ? (
+            <ThankYou rating={rating} />
+          ) : (
+            <RateUs
+              onClick={handleSubmission}
+              setRating={setRating}
+              submitted={submitted}
+            />
+          )}
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Hero;
+
+{
+  /* <div className="w-100 h-[100vh] flex justify-center items-center px-6">
+      <div className="bg-[#252d37] max-w-[416px] rounded-2xl shadow-lg shadow-[#0d1014] py-8 px-6 sm:p-8 bg-gradient-to-b from-[#252d37] to-[#181e25] flex items-center justify-center sm:min-h-[416px] sm:min-w-[416px]">
         {isLoading ? (
           <div className="animate-spin h-10 w-10 border-t-2 border-primary rounded-full mr-3 text-primary"></div>
         ) : submitted ? (
@@ -43,8 +66,5 @@ const Hero = () => {
           />
         )}
       </div>
-    </div>
-  );
-};
-
-export default Hero;
+    </div> */
+}
