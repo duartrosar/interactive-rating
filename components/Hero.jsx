@@ -33,7 +33,7 @@ const Hero = () => {
       {isLoading ? (
         <div className="animate-spin h-10 w-10 border-t-2 border-primary rounded-full mr-3 text-primary"></div>
       ) : (
-        <div className="bg-[#252d37] max-w-[416px] rounded-2xl shadow-lg shadow-[#0d1014] py-8 px-6 sm:p-8 bg-gradient-to-b from-[#252d37] to-[#181e25]">
+        <div className="bg-dark-blue max-w-[416px] rounded-2xl shadow-lg shadow-[#0d1014] py-8 px-6 sm:p-8 bg-gradient-to-b from-dark-blue to-[#181e25]">
           {submitted ? (
             <ThankYou rating={rating} />
           ) : (
@@ -50,21 +50,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-{
-  /* <div className="w-100 h-[100vh] flex justify-center items-center px-6">
-      <div className="bg-[#252d37] max-w-[416px] rounded-2xl shadow-lg shadow-[#0d1014] py-8 px-6 sm:p-8 bg-gradient-to-b from-[#252d37] to-[#181e25] flex items-center justify-center sm:min-h-[416px] sm:min-w-[416px]">
-        {isLoading ? (
-          <div className="animate-spin h-10 w-10 border-t-2 border-primary rounded-full mr-3 text-primary"></div>
-        ) : submitted ? (
-          <ThankYou rating={rating} />
-        ) : (
-          <RateUs
-            onClick={handleSubmission}
-            setRating={setRating}
-            submitted={submitted}
-          />
-        )}
-      </div>
-    </div> */
-}

@@ -20,7 +20,7 @@ const RateUs = (props) => {
           <h1 className="text-white text-[24px] sm:text-[28px] font-bold font-main">
             How did we do?
           </h1>
-          <p className="font-main leading-[22px] text-[14px] sm:text-[15px] font-normal text-[#959eac] tracking-normal mt-4">
+          <p className="font-main leading-[22px] text-[14px] sm:text-[15px] font-normal text-light-gray tracking-normal mt-4">
             Please let us know how we did with your support request. All
             feedback is appreciated to help us improve our offering!
           </p>
@@ -34,8 +34,6 @@ const RateUs = (props) => {
                 onMouseEnter={() => setHoverIndex(index)}
                 onMouseLeave={() => setHoverIndex(0)}
               >
-                {/* {console.log(`Index: ${index}`)}
-          {console.log(`Hover: ${hoverIndex}`)} */}
                 <Circle
                   onClick={() => setRating(index)}
                   number={index}

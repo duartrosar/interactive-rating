@@ -7,18 +7,15 @@ const Circle = ({ onClick, number = 0, url = "", hover, selected, rating }) => {
   const styles = {
     default: {
       backgroundColor: "bg-dark-blue",
-      // scale: "100",
       textColor: "text-light-gray",
     },
     hover: {
       backgroundColor: "bg-primary",
-      // scale: "scale-110",
-      textColor: "text-[#fff]",
+      textColor: "text-white",
     },
     selected: {
       backgroundColor: "bg-selected",
-      // scale: "scale-110",
-      textColor: "text-[#fff]",
+      textColor: "text-white",
     },
   };
 
@@ -33,7 +30,7 @@ const Circle = ({ onClick, number = 0, url = "", hover, selected, rating }) => {
     "duration-150",
     "rounded-full",
     "cursor-pointer",
-    "shadow-md",
+    "shadow-sm",
     "group",
     circleStyles.backgroundColor,
     "shadow-dark-gray",
@@ -44,10 +41,6 @@ const Circle = ({ onClick, number = 0, url = "", hover, selected, rating }) => {
     "justify-center",
     circleStyles.scale,
   );
-
-  // if (number == 0) {
-  //   console.log(circleStyles);
-  // }
 
   return (
     <div onClick={onClick} className={circleClasses}>

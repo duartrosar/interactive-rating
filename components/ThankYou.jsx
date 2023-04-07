@@ -14,7 +14,7 @@ const ThankYou = (props) => {
           alt="thankyou"
           className="w-[144px] h-[96px]"
         />
-        <div className="bg-[#262E38] rounded-full py-[5px] px-3 flex items-center justify-center mt-6 sm:mt-8 shadow-md shadow-dark-gray">
+        <div className="bg-dark-blue rounded-full py-[5px] px-3 flex items-center justify-center mt-6 sm:mt-8 shadow-sm shadow-dark-gray">
           <p className="font-main text-[14px] sm:text-[15px] font-normal text-primary tracking-normal">
             You selected {props.rating} out of 5
           </p>
