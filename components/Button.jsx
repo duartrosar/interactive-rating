@@ -3,13 +3,13 @@ import React from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 
-const Button = ({ isActive }) => {
+const Button = (props) => {
   const styles = {
     inactive: {
-      backgroundColor: "bg-dark-gray",
-      backgroundHoverColor: "hover:bg-dark-gray",
-      textColor: "text-gray-800",
-      hoverTextColor: "text-gray-800",
+      backgroundColor: "bg-dark-blue",
+      backgroundHoverColor: "hover:bg-dark-blue",
+      textColor: "text-light-gray",
+      hoverTextColor: "hover:text-light-gray",
       cursorStyle: "cursor-not-allowed",
     },
     active: {
@@ -27,18 +27,20 @@ const Button = ({ isActive }) => {
     textColor,
     hoverTextColor,
     cursorStyle,
-  } = isActive ? styles.active : styles.inactive;
+  } = props.isActive ? styles.active : styles.inactive;
 
   const buttonClasses = classNames(
     "font-main",
     "text-center",
-    "p-2",
+    "p-3",
     "rounded-full",
     "uppercase",
-    "font-normal",
-    "text-lg",
+    "font-bold",
+    "text-[14px] sm:text-[15px]",
     "transition",
     "w-full",
+    "shadow-md",
+    "mt-6",
     backgroundColor,
     backgroundHoverColor,
     textColor,
@@ -46,7 +48,11 @@ const Button = ({ isActive }) => {
     cursorStyle,
   );
 
-  return <button className={buttonClasses}>Submit</button>;
+  return (
+    <button onClick={props.onClick} className={buttonClasses}>
+      Submit
+    </button>
+  );
 };
 
 Button.propTypes = {
